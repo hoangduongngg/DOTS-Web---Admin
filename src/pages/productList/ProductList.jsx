@@ -6,18 +6,20 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function ProductList() {
+  
   const [data, setData] = useState(productRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
+  
 
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
       field: "product",
       headerName: "Product",
-      width: 200,
+      width: 300,
       renderCell: (params) => {
         return (
           <div className="productListItem">
@@ -27,11 +29,11 @@ export default function ProductList() {
         );
       },
     },
-    { field: "stock", headerName: "Stock", width: 200 },
+    { field: "stock", headerName: "Stock", width: 120 },
     {
       field: "status",
       headerName: "Status",
-      width: 120,
+      width: 150,
     },
     {
       field: "price",
@@ -60,6 +62,12 @@ export default function ProductList() {
 
   return (
     <div className="productList">
+      <h1 className="productListTitle">Product List</h1>
+      <h4> <br /></h4>
+      <Link to="/newproduct">
+          <button className="productAddButton">Create</button>
+      </Link>
+      <h3> <br /></h3>
       <DataGrid
         rows={data}
         disableSelectionOnClick
