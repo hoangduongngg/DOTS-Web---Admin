@@ -11,7 +11,11 @@ export default function NewProduct() {
         </div>
         <div className="addProductItem">
           <label>Name</label>
-          <input type="text" placeholder="Apple Airpods" />
+          <input type="text" placeholder="Nike..." />
+        </div>
+        <div className="addProductItem">
+          <label>Price</label>
+          <input type="text" placeholder="1,000.000 đ" />
         </div>
         <div className="addProductItem">
           <label>Stock</label>

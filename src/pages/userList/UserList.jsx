@@ -17,7 +17,7 @@ export default function UserList() {
     {
       field: "user",
       headerName: "User",
-      width: 200,
+      width: 180,
       renderCell: (params) => {
         return (
           <div className="userListUser">
@@ -27,18 +27,22 @@ export default function UserList() {
         );
       },
     },
-    { field: "email", headerName: "Email", width: 200 },
-    {
+  { 
+      field: "email", 
+      headerName: "Email",
+      width: 250 
+    },
+  {
       field: "status",
       headerName: "Status",
       width: 120,
     },
-    {
-      field: "transaction",
-      headerName: "Transaction Volume",
+  {
+      field: "phone",
+      headerName: "Phone",
       width: 160,
     },
-    {
+  {
       field: "action",
       headerName: "Action",
       width: 150,
@@ -60,6 +64,12 @@ export default function UserList() {
 
   return (
     <div className="userList">
+      <h1 className="userListTitle">User List</h1>
+      <h4> <br /></h4>
+        <Link to="/newUser">
+          <button className="userAddButton">Create</button>
+        </Link>
+      <h3> <br /></h3>
       <DataGrid
         rows={data}
         disableSelectionOnClick
